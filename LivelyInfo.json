@@ -1,0 +1,14 @@
+{
+  "AppVersion": "1.3.0.0",
+  "Title": "Circular Audio Visualizer",
+  "Thumbnail": "preview.png",
+  "Preview": "preview.gif",
+  "Desc": "Displays an audio spectrum of the currently played system sounds in a circle",
+  "Author": "elias123tre",
+  "License": null,
+  "Contact": "https://github.com/elias123tre/lively-audio-visualizer",
+  "Type": 2,
+  "FileName": "index.html",
+  "Arguments": null,
+  "IsAbsolutePath": false
+}
