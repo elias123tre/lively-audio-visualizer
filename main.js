@@ -6,6 +6,7 @@ let endHue = 180
 let saturation = 50
 let lightness = 50
 let compensation = 50
+let glow = 10
 
 let debug = document.getElementById("debug")
 let middle = document.getElementById("middle")
@@ -36,6 +37,7 @@ function livelyAudioListener(audioArray) {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
   ctx.lineWidth = barWidth
   ctx.lineCap = "round"
+  ctx.shadowBlur = glow
 
   if (audio.length > 2) {
     // Draw each bar
@@ -48,9 +50,11 @@ function livelyAudioListener(audioArray) {
       ctx.rotate(2 * Math.PI * ratio)
 
       // Color from given hue, saturation, lightness
-      ctx.strokeStyle = `hsl(${
+      let color = `hsl(${
         ((endHue - startHue) * halfRatio + startHue) % 360
       }, ${saturation}%, ${lightness}%)`
+      ctx.strokeStyle = color
+      ctx.shadowColor = color
 
       // Move to approparite height
       ctx.moveTo(0, innerRadius)
@@ -106,6 +110,9 @@ function livelyPropertyListener(name, val) {
       break
     case "barCompensation":
       compensation = val
+      break
+    case "barGlow":
+      glow = val
       break
 
     default:

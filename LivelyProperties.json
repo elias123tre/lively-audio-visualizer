@@ -53,6 +53,15 @@
     "type": "slider",
     "value": 50
   },
+  "barGlow": {
+    "max": 25,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Bar glow",
+    "type": "slider",
+    "value": 10
+  },
   "barWidth": {
     "max": 25,
     "min": 1,
