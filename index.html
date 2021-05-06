@@ -2,19 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content='IE=8' http-equiv='X-UA-Compatible'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Circle audio visualizer</title>
+    <style>
+        html,
+        body,
+        #canvas {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            user-select: none;
+        }
 
-    <!-- <script src="/js/live.js"></script> -->
-    <script src="/js/p5.min.js"></script>
-    <script src="/js/sketch.js"></script>
+        body {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #middle {
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #debug {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <p id="debug" style="position: fixed;top: 0;left: 0">Lorem, ipsum.</p> -->
+    <img id="middle" />
+    <canvas id="canvas"></canvas>
+
+    <div id="debug"></div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

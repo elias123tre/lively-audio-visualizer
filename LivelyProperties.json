@@ -1,1 +1,114 @@
-{}
+{
+  "imageLabel": {
+    "type": "label",
+    "value": "Images:"
+  },
+  "bgImage": {
+    "type": "folderDropdown",
+    "value": "tP5iLDT.jpg",
+    "text": "Background image",
+    "filter": "*.jpg|*.jpeg|*.png|*.webp|*.gif",
+    "folder": "images"
+  },
+  "useMiddleImage": {
+    "type": "checkbox",
+    "value": false,
+    "text": "Show center image"
+  },
+  "middleImage": {
+    "type": "folderDropdown",
+    "value": "tn_white.png",
+    "text": "Center image",
+    "filter": "*.jpg|*.jpeg|*.png|*.webp|*.gif|*.svg",
+    "folder": "logos"
+  },
+  "middleImageScale": {
+    "max": 100,
+    "min": 10,
+    "tick": 25,
+    "step": 1,
+    "text": "Center image scale",
+    "type": "slider",
+    "value": 95
+  },
+  "barLabel": {
+    "type": "label",
+    "value": "Bars:"
+  },
+  "maxLength": {
+    "max": 500,
+    "min": 50,
+    "tick": 25,
+    "step": 5,
+    "text": "Bar length",
+    "type": "slider",
+    "value": 100
+  },
+  "innerRadius": {
+    "max": 90,
+    "min": 0,
+    "tick": 25,
+    "step": 5,
+    "text": "Inner space",
+    "type": "slider",
+    "value": 50
+  },
+  "barWidth": {
+    "max": 25,
+    "min": 1,
+    "tick": 25,
+    "step": 1,
+    "text": "Bar width",
+    "type": "slider",
+    "value": 8
+  },
+  "barCompensation": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Bass compensation",
+    "type": "slider",
+    "value": 25
+  },
+  "colorLabel": {
+    "type": "label",
+    "value": "Colors:"
+  },
+  "startHue": {
+    "max": 360,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Top color",
+    "type": "slider",
+    "value": 206
+  },
+  "endHue": {
+    "max": 360,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Bottom color",
+    "type": "slider",
+    "value": 170
+  },
+  "saturation": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 5,
+    "text": "Color saturation",
+    "type": "slider",
+    "value": 50
+  },
+  "lightness": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 5,
+    "text": "Color lightness",
+    "type": "slider",
+    "value": 50
+  }
+}
