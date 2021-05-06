@@ -6,6 +6,9 @@ let endHue = 180
 let saturation = 50
 let lightness = 50
 let compensation = 50
+let audioHistory = []
+let historyLength = 5
+let playing = []
 
 let debug = document.getElementById("debug")
 let middle = document.getElementById("middle")
@@ -23,9 +26,9 @@ ctx.globalCompositeOperation = "destination-over"
 // grad.addColorStop(1, "green")
 // ctx.strokeStyle = grad
 
-function livelyAudioListener(audioArray) {
+function draw() {
   // Remove duplicate frequencies
-  let audio = audioArray.filter((elem, idx, arr) => arr[idx - 1] !== elem)
+  let audio = playing.filter((elem, idx, arr) => arr[idx - 1] !== elem)
   // Compensate for overamplified bass
   audio = audio.map((elem, idx, arr) => {
     return elem * (idx / arr.length + (100 - compensation + 50) / 100)
@@ -62,6 +65,38 @@ function livelyAudioListener(audioArray) {
       ctx.setTransform(1, 0, 0, 1, 0, 0)
     })
   }
+}
+
+setInterval(draw, 16)
+
+function livelyAudioListener(audioArray) {
+  if (audioHistory.push(audioArray) > historyLength) {
+    audioHistory.shift()
+  } else {
+    return
+  }
+  // Unzip values
+  let values = audioHistory.reduce(
+    (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+    Array.from({
+      length: Math.max(...audioHistory.map((x) => x.length)),
+    }).map(() => [])
+  )
+  // Average each array
+  playing = values.map((val) => val.reduce((acc, val) => acc + val, 0) / val.length)
+  draw()
+
+  //   if (!debug.textContent)
+  //     debug.textContent = `Length: ${audioHistory.length}
+  // ${audioHistory.map((v) => JSON.stringify(v) + "\n")}
+
+  // Length: ${playing.length}
+  // ${JSON.stringify(playing)}
+
+  // ${values[0].reduce((acc, val) => acc + val, 0) / values[0].length}
+
+  // Length: ${values.length}
+  // ${JSON.stringify(values)}`
 }
 
 function livelyPropertyListener(name, val) {
