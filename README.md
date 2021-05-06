@@ -12,6 +12,13 @@ Download the [latest release zip file](https://github.com/elias123tre/Lively-Aud
 
 https://user-images.githubusercontent.com/18127101/117224561-86d8d880-ae10-11eb-8c7e-fd1d79a0c89d.mp4
 
+## Use custom background image
+
+1. After installing the wallpaper, right click on it
+2. Select `Open File Location`
+3. Move your image to the `images` folder (or `logos` to add a logo)
+4. Select it when customizing the wallpaper
+
 ## Features
 
 - [x] Customizable background image
