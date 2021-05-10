@@ -24,8 +24,9 @@ https://user-images.githubusercontent.com/18127101/117224561-86d8d880-ae10-11eb-
 - [x] Customizable background image
 - [x] Customizable bar color
 - [x] Customizable bar amplitude
+- [x] Glowing bars
 - [x] Customizable center logo image
-- [ ] Background image blur
+- [ ] Background image blur option
 - [ ] Different types of visualizers (eg. lines from bottom)
 - [ ] Background effects (snow/stars/debris with glow, similar to Trap Nation)
 - [ ] Moving inner ring (similar to NCS)
