@@ -25,5 +25,11 @@ https://user-images.githubusercontent.com/18127101/117224561-86d8d880-ae10-11eb-
 - [x] Customizable bar color
 - [x] Customizable bar amplitude
 - [x] Customizable center logo image
+- [ ] Background image blur
+- [ ] Different types of visualizers (eg. lines from bottom)
+- [ ] Background effects (snow/stars/debris with glow, similar to Trap Nation)
+- [ ] Moving inner ring (similar to NCS)
+- [ ] Change visualizer position
+- [ ] Camera shake/wobble for background and/or visualizer
 - [ ] Multi monitor background span
 - [ ] Smoother bar visualizer bars
