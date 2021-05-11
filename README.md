@@ -29,10 +29,10 @@ https://user-images.githubusercontent.com/18127101/117224561-86d8d880-ae10-11eb-
 - [x] Background effects (snow/stars/debris with glow, similar to Trap Nation)
 - [x] Moving inner ring (similar to NCS)
 - [x] Background image blur option
-- [ ] Different types of visualizers (eg. lines from bottom)
-- [ ] Change visualizer position
-- [ ] Camera shake/wobble for background and/or visualizer
-- [ ] Multi monitor background span
+- [x] Change visualizer position
+- [x] Camera shake/wobble for visualizer
+- [x] Multi monitor background span
+- [ ] Different types of visualizers (eg. lines from bottom or sparkline)
 - [ ] Smoother bar visualizer bars
 
 ## Troubleshooting

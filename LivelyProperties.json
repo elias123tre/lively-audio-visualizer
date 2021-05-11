@@ -26,13 +26,13 @@
   },
   "middleImage": {
     "type": "folderDropdown",
-    "value": "tn_white.png",
+    "value": "cldkid.svg",
     "text": "Center image",
     "filter": "*.jpg|*.jpeg|*.png|*.webp|*.gif|*.svg",
     "folder": "logos"
   },
   "middleImageScale": {
-    "max": 100,
+    "max": 105,
     "min": 10,
     "tick": 25,
     "step": 1,
@@ -53,6 +53,29 @@
     "type": "slider",
     "value": 100
   },
+  "barWidth": {
+    "max": 25,
+    "min": 1,
+    "tick": 25,
+    "step": 1,
+    "text": "Bar width",
+    "type": "slider",
+    "value": 8
+  },
+  "barGlow": {
+    "max": 25,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Bar glow",
+    "type": "slider",
+    "value": 10
+  },
+  "roundedBars": {
+    "type": "checkbox",
+    "value": true,
+    "text": "Rounded bars"
+  },
   "innerRadius": {
     "max": 90,
     "min": 0,
@@ -67,27 +90,9 @@
     "min": 0,
     "tick": 25,
     "step": 1,
-    "text": "Inner circle movement",
+    "text": "Inner circle reactivity",
     "type": "slider",
     "value": 25
-  },
-  "barGlow": {
-    "max": 25,
-    "min": 0,
-    "tick": 25,
-    "step": 1,
-    "text": "Bar glow",
-    "type": "slider",
-    "value": 10
-  },
-  "barWidth": {
-    "max": 25,
-    "min": 1,
-    "tick": 25,
-    "step": 1,
-    "text": "Bar width",
-    "type": "slider",
-    "value": 8
   },
   "barCompensation": {
     "max": 100,
@@ -138,6 +143,28 @@
     "type": "slider",
     "value": 50
   },
+  "shakeLabel": {
+    "type": "label",
+    "value": "Visualizer shake/wobble:"
+  },
+  "shakeSpeed": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Shake speed",
+    "type": "slider",
+    "value": 50
+  },
+  "shakeRadius": {
+    "max": 50,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Shake radius",
+    "type": "slider",
+    "value": 15
+  },
   "starsLabel": {
     "type": "label",
     "value": "Background stars:"
@@ -169,5 +196,27 @@
     "text": "Star glow",
     "type": "slider",
     "value": 15
+  },
+  "locationLabel": {
+    "type": "label",
+    "value": "Visualizer location:"
+  },
+  "xPercent": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Horizontal location",
+    "type": "slider",
+    "value": 50
+  },
+  "yPercent": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Vertical location",
+    "type": "slider",
+    "value": 50
   }
 }

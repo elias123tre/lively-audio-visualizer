@@ -14,21 +14,22 @@ let starColor = "#FFFFFF"
 let starOpacity = 50
 let starGlow = 15
 
+let xPercent = 50
+let yPercent = 50
+let movementSpeed = 50
+let movementRadius = 15
+let roundedBars = false
+
 let debug = document.getElementById("debug")
 let middle = document.getElementById("middle")
 let canvas = document.getElementById("canvas")
 // Fullscreen canvas
 canvas.width = document.body.clientWidth
 canvas.height = document.body.clientHeight
+let axis = 0
 
 let ctx = canvas.getContext("2d")
 ctx.globalCompositeOperation = "destination-over"
-
-// Todo: Gradient color for bars
-// let grad = ctx.createLinearGradient(50, 50, 150, 150)
-// grad.addColorStop(0, "red")
-// grad.addColorStop(1, "green")
-// ctx.strokeStyle = grad
 
 function livelyAudioListener(audioArray) {
   // Set overall level
@@ -45,8 +46,19 @@ function livelyAudioListener(audioArray) {
 
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
   ctx.lineWidth = barWidth
-  ctx.lineCap = "round"
+  ctx.lineCap = roundedBars ? "round" : "butt"
   ctx.shadowBlur = glow
+  // Visualizer location
+  let xPos = ctx.canvas.width * (xPercent / 100)
+  xPos += (noise(axis) - 0.5) * ((innerRadius * movementRadius) / 100)
+  let yPos = ctx.canvas.height * (yPercent / 100)
+  yPos += (noise(0, axis) - 0.5) * ((innerRadius * movementRadius) / 100)
+  axis += average * (movementSpeed / 100)
+  // Logo center image location
+  if (middle.style.display != "none") {
+    middle.style.left = `${xPos}px`
+    middle.style.top = `${yPos}px`
+  }
 
   if (audio.length > 2) {
     // Draw each bar
@@ -54,8 +66,7 @@ function livelyAudioListener(audioArray) {
       let ratio = (index + 0.5) / arr.length
       let halfRatio = Math.abs(((index / (arr.length / 2)) % (arr.length / 2)) - 1)
       ctx.beginPath()
-      // Center origin
-      ctx.translate(ctx.canvas.width / 2, ctx.canvas.height / 2)
+      ctx.translate(xPos, yPos)
       // Rotate each bar
       ctx.rotate(2 * Math.PI * ratio)
 
@@ -142,6 +153,21 @@ function livelyPropertyListener(name, val) {
       break
     case "starGlow":
       starGlow = val
+      break
+    case "xPercent":
+      xPercent = val
+      break
+    case "yPercent":
+      yPercent = val
+      break
+    case "shakeSpeed":
+      movementSpeed = val
+      break
+    case "shakeRadius":
+      movementRadius = val
+      break
+    case "roundedBars":
+      roundedBars = val
       break
 
     default:

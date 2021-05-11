@@ -51,11 +51,17 @@ function anim() {
       if (star_x_save > 0 && star_x_save < w && star_y_save > 0 && star_y_save < h) {
         context.lineWidth = (1 - star_color_ratio * star.speed) * 2
         context.beginPath()
+        context.translate(
+          starfield.width * (xPercent / 100 - 0.5),
+          starfield.height * (yPercent / 100 - 0.5)
+        )
         context.lineWidth = star.size
         context.moveTo(star_x_save, star_y_save)
         context.lineTo(star_x_save, star_y_save)
         // context.lineTo(star.new_x, star.new_y)
         context.stroke()
+        // Reset translation
+        context.setTransform(1, 0, 0, 1, 0, 0)
       }
     }
   }
