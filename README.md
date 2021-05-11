@@ -6,7 +6,9 @@ Audio Visualizer for [lively wallpaper](https://rocksdanister.github.io/lively/)
 
 ## How to setup
 
-Download the [latest release zip file](https://github.com/elias123tre/Lively-Audio-Visualizer/releases/latest) and drag and drop it into lively.
+1. Go to the [latest release](https://github.com/elias123tre/Lively-Audio-Visualizer/releases/latest)
+2. Click file named `Circle-Audio-Visualizer.zip` to download it
+3. Drag and drop the downloaded file into lively
 
 ## Demonstration
 
