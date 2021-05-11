@@ -9,13 +9,19 @@
     <style>
         html,
         body,
-        #canvas {
+        #canvas,
+        #starfield {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             overflow: hidden;
             user-select: none;
+        }
+
+        #starfield {
+            position: absolute;
+            z-index: -10;
         }
 
         body {
@@ -43,12 +49,15 @@
 </head>
 
 <body>
+    <canvas id="starfield"></canvas>
+
     <img id="middle" />
     <canvas id="canvas"></canvas>
 
     <pre id="debug"></pre>
 
     <script src="main.js"></script>
+    <script src="stars.js"></script>
 </body>
 
 </html>

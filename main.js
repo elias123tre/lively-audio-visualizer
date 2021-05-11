@@ -7,6 +7,12 @@ let saturation = 50
 let lightness = 50
 let compensation = 50
 let glow = 10
+let innerMovement = 25
+
+let showStars = true
+let starColor = "#FFFFFF"
+let starOpacity = 50
+let starGlow = 15
 
 let debug = document.getElementById("debug")
 let middle = document.getElementById("middle")
@@ -25,6 +31,9 @@ ctx.globalCompositeOperation = "destination-over"
 // ctx.strokeStyle = grad
 
 function livelyAudioListener(audioArray) {
+  // Set overall level
+  average = audioArray.reduce((acc, val) => acc + val) / audioArray.length
+  star_speed = average * 32
   // Remove duplicate frequencies
   let audio = audioArray.filter((elem, idx, arr) => arr[idx - 1] !== elem)
   // Compensate for overamplified bass
@@ -47,6 +56,7 @@ function livelyAudioListener(audioArray) {
       ctx.beginPath()
       // Center origin
       ctx.translate(ctx.canvas.width / 2, ctx.canvas.height / 2)
+      // Rotate each bar
       ctx.rotate(2 * Math.PI * ratio)
 
       // Color from given hue, saturation, lightness
@@ -56,10 +66,11 @@ function livelyAudioListener(audioArray) {
       ctx.strokeStyle = color
       ctx.shadowColor = color
 
+      let innerOffset = average * maxLength * (innerMovement / 100)
       // Move to approparite height
-      ctx.moveTo(0, innerRadius)
+      ctx.moveTo(0, innerRadius + innerOffset)
       // Draw line outwards from origin
-      ctx.lineTo(0, val * maxLength + innerRadius)
+      ctx.lineTo(0, val * maxLength + innerRadius + innerOffset)
       // Apply stroke
       ctx.stroke()
       // Reset current transformation matrix to the identity matrix
@@ -86,6 +97,9 @@ function livelyPropertyListener(name, val) {
       break
     case "bgImage":
       document.body.style.backgroundImage = `url(/${val.replace(/\\/g, "/")})`
+      break
+    case "bgBlur":
+      document.body.style.backdropFilter = `blur(${Math.round(val)}px)`
       break
     case "useMiddleImage":
       middle.style.display = val ? "block" : "none"
@@ -114,9 +128,24 @@ function livelyPropertyListener(name, val) {
     case "barGlow":
       glow = val
       break
+    case "innerMovement":
+      innerMovement = val
+      break
+    case "showStars":
+      showStars = val
+      break
+    case "starColor":
+      starColor = val
+      break
+    case "starOpacity":
+      starOpacity = val
+      break
+    case "starGlow":
+      starGlow = val
+      break
 
     default:
-      console.error(`Unknown customization option: ${name}`)
+      // console.error(`Unknown customization option: ${name}`)
       break
   }
 }

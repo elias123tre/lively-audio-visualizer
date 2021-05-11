@@ -10,6 +10,15 @@
     "filter": "*.jpg|*.jpeg|*.png|*.webp|*.gif",
     "folder": "images"
   },
+  "bgBlur": {
+    "max": 10,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Background image blur",
+    "type": "slider",
+    "value": 0
+  },
   "useMiddleImage": {
     "type": "checkbox",
     "value": false,
@@ -48,10 +57,19 @@
     "max": 90,
     "min": 0,
     "tick": 25,
-    "step": 5,
+    "step": 1,
     "text": "Inner space",
     "type": "slider",
     "value": 50
+  },
+  "innerMovement": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Inner circle movement",
+    "type": "slider",
+    "value": 25
   },
   "barGlow": {
     "max": 25,
@@ -119,5 +137,37 @@
     "text": "Color lightness",
     "type": "slider",
     "value": 50
+  },
+  "starsLabel": {
+    "type": "label",
+    "value": "Background stars:"
+  },
+  "showStars": {
+    "type": "checkbox",
+    "value": true,
+    "text": "Show background stars"
+  },
+  "starColor": {
+    "text": "Star color",
+    "type": "color",
+    "value": "#FFFFFF"
+  },
+  "starOpacity": {
+    "max": 100,
+    "min": 1,
+    "tick": 25,
+    "step": 1,
+    "text": "Star opacity",
+    "type": "slider",
+    "value": 50
+  },
+  "starGlow": {
+    "max": 25,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Star glow",
+    "type": "slider",
+    "value": 15
   }
 }
