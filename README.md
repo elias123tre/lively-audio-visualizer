@@ -4,6 +4,8 @@ Audio Visualizer for [lively wallpaper](https://rocksdanister.github.io/lively/)
 
 ![Preview gif](preview.gif)
 
+[![Github all releases](https://img.shields.io/github/downloads/elias123tre/lively-audio-visualizer/total.svg?style=flat-square)](https://github.com/elias123tre/lively-audio-visualizer/releases/latest)
+
 ## How to setup
 
 1. Go to the [latest release](https://github.com/elias123tre/Lively-Audio-Visualizer/releases/latest)
