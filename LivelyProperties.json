@@ -54,13 +54,13 @@
     "value": 100
   },
   "barWidth": {
-    "max": 25,
+    "max": 150,
     "min": 1,
     "tick": 25,
-    "step": 1,
+    "step": 5,
     "text": "Bar width",
     "type": "slider",
-    "value": 8
+    "value": 30
   },
   "barGlow": {
     "max": 25,
@@ -81,7 +81,7 @@
     "min": 0,
     "tick": 25,
     "step": 1,
-    "text": "Inner space",
+    "text": "Visualizer size",
     "type": "slider",
     "value": 50
   },
@@ -186,7 +186,7 @@
     "step": 1,
     "text": "Star opacity",
     "type": "slider",
-    "value": 50
+    "value": 35
   },
   "starGlow": {
     "max": 25,
@@ -196,6 +196,15 @@
     "text": "Star glow",
     "type": "slider",
     "value": 15
+  },
+  "starBlur": {
+    "max": 20,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Star blur",
+    "type": "slider",
+    "value": 10
   },
   "locationLabel": {
     "type": "label",
@@ -218,5 +227,45 @@
     "text": "Vertical location",
     "type": "slider",
     "value": 50
+  },
+  "shadowLabel": {
+    "type": "label",
+    "value": "Visualizer shadow:"
+  },
+  "shadowX": {
+    "max": 32,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Shadow horizontal offset",
+    "type": "slider",
+    "value": 4
+  },
+  "shadowY": {
+    "max": 32,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Shadow vertical offset",
+    "type": "slider",
+    "value": 4
+  },
+  "shadowBlur": {
+    "max": 20,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Shadow blur",
+    "type": "slider",
+    "value": 4
+  },
+  "shadowOpacity": {
+    "max": 100,
+    "min": 0,
+    "tick": 25,
+    "step": 1,
+    "text": "Shadow opacity",
+    "type": "slider",
+    "value": 25
   }
 }

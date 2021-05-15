@@ -1,6 +1,8 @@
-let innerRadius = 250
+let innerPercent = 50
+let innerRadius = 270
+let barPercent = 50
 let maxLength = 1080 / 2 - innerRadius
-let barWidth = 10
+let barWidth = 75
 let startHue = 0
 let endHue = 180
 let saturation = 50
@@ -20,16 +22,22 @@ let movementSpeed = 50
 let movementRadius = 15
 let roundedBars = false
 
-let debug = document.getElementById("debug")
-let middle = document.getElementById("middle")
-let canvas = document.getElementById("canvas")
+let shadowX = 8
+let shadowY = 8
+let shadowBlur = 10
+let shadowOpacity = 70
+
+const debug = document.getElementById("debug")
+const middle = document.getElementById("middle")
+const canvas = document.getElementById("canvas")
+const visualizer = document.getElementById("visualizer")
+const starfield = document.getElementById("starfield")
 // Fullscreen canvas
 canvas.width = document.body.clientWidth
 canvas.height = document.body.clientHeight
 let axis = 0
 
-let ctx = canvas.getContext("2d")
-ctx.globalCompositeOperation = "destination-over"
+const ctx = canvas.getContext("2d")
 
 function livelyAudioListener(audioArray) {
   // Set overall level
@@ -44,8 +52,12 @@ function livelyAudioListener(audioArray) {
   // Mirror on vertical axis
   audio = audio.slice().reverse().concat(audio)
 
+  let innerRadius = (ctx.canvas.height / 2) * (innerPercent / 100)
+  let maxLength = (ctx.canvas.height / 2 - innerRadius) * (barPercent / 100)
+  // Bar length, val = 100 -> reach border of screen
+
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-  ctx.lineWidth = barWidth
+  ctx.lineWidth = ((barWidth / 100) * (2 * innerRadius * Math.PI)) / audio.length
   ctx.lineCap = roundedBars ? "round" : "butt"
   ctx.shadowBlur = glow
   // Visualizer location
@@ -59,6 +71,11 @@ function livelyAudioListener(audioArray) {
     middle.style.left = `${xPos}px`
     middle.style.top = `${yPos}px`
   }
+
+  // Visualizer drop shadow
+  visualizer.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0,0,0,${
+    shadowOpacity / 100
+  }))`
 
   if (audio.length > 2) {
     // Draw each bar
@@ -94,17 +111,17 @@ function livelyPropertyListener(name, val) {
   // debug.textContent += `Name: ${name} Val: ${val}`
   switch (name) {
     case "innerRadius":
-      innerRadius = (canvas.height / 2) * (val / 100)
+      innerPercent = val
       // Logo image width & height
-      middle.style.width = `${innerRadius * 2}px`
-      middle.style.height = `${innerRadius * 2}px`
+      let rad = (ctx.canvas.height / 2) * (val / 100)
+      middle.style.width = `${rad * 2}px`
+      middle.style.height = `${rad * 2}px`
       break
     case "middleImageScale":
       middle.style.transform = `translate(-50%, -50%) scale(${val / 100})`
       break
     case "maxLength":
-      // Bar length, val = 100 -> reach border of screen
-      maxLength = (canvas.height / 2 - innerRadius) * (val / 100)
+      barPercent = val
       break
     case "bgImage":
       document.body.style.backgroundImage = `url(/${val.replace(/\\/g, "/")})`
@@ -154,6 +171,9 @@ function livelyPropertyListener(name, val) {
     case "starGlow":
       starGlow = val
       break
+    case "starBlur":
+      starfield.style.filter = `blur(${val / 2}px)`
+      break
     case "xPercent":
       xPercent = val
       break
@@ -169,9 +189,25 @@ function livelyPropertyListener(name, val) {
     case "roundedBars":
       roundedBars = val
       break
+    case "shadowX":
+      shadowX = val
+      break
+    case "shadowY":
+      shadowY = val
+      break
+    case "shadowBlur":
+      shadowBlur = val
+      break
+    case "shadowOpacity":
+      shadowOpacity = val
+      break
 
     default:
       // console.error(`Unknown customization option: ${name}`)
       break
   }
 }
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  livelyAudioListener([0])
+})
