@@ -1,8 +1,7 @@
 # Lively Audio Visualizer
 
-Advanced and customizable Audio Visualizer for [lively wallpaper](https://rocksdanister.github.io/lively/) (similar to Wallpaper Engine)
-
-![Preview gif](qpyivo5q.gif)
+Advanced and customizable Audio Visualizer for [lively wallpaper](https://rocksdanister.github.io/lively/) (similar to Wallpaper Engine)  
+See example configurations and demonstration below!
 
 [![Github all releases](https://img.shields.io/github/downloads/elias123tre/lively-audio-visualizer/total.svg?style=flat-square)](https://github.com/elias123tre/lively-audio-visualizer/releases/latest)
 
@@ -12,11 +11,15 @@ Advanced and customizable Audio Visualizer for [lively wallpaper](https://rocksd
 2. Click file named `Circle-Audio-Visualizer.zip` to download it
 3. Drag and drop the downloaded file into lively
 
-## Example demonstrations
+## Demonstration
 
-https://user-images.githubusercontent.com/18127101/117224561-86d8d880-ae10-11eb-8c7e-fd1d79a0c89d.mp4
+https://user-images.githubusercontent.com/18127101/118381838-84843480-b5ef-11eb-821f-5a7c5dbf2a44.mp4
 
-_Stay tuned for more examples_
+## Examples
+
+![qpyivo5q](https://user-images.githubusercontent.com/18127101/118381983-bb0e7f00-b5f0-11eb-9032-0ffc6f086f2a.gif) ![reljwqaq](https://user-images.githubusercontent.com/18127101/118381985-c19cf680-b5f0-11eb-9d61-bd5e7e75c551.gif) ![fvantbgc](https://user-images.githubusercontent.com/18127101/118382057-8b13ab80-b5f1-11eb-8a4a-ca2ac0533b25.gif) ![z1placat](https://user-images.githubusercontent.com/18127101/118382119-6bc94e00-b5f2-11eb-95a0-dd7d33461e7e.gif)
+
+_Feel free to open an issue or pull request if want your setup here_
 
 ## Use custom background image
 
