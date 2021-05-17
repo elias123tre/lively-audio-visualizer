@@ -7,9 +7,8 @@ See example configurations and demonstration below!
 
 ## How to download
 
-1. Go to the [latest release](https://github.com/elias123tre/Lively-Audio-Visualizer/releases/latest)
-2. Click file named `Circle-Audio-Visualizer.zip` to download it
-3. Drag and drop the downloaded file into lively
+1. Download the [lively wallpaper file](https://github.com/elias123tre/lively-audio-visualizer/releases/latest/download/Circle-Audio-Visualizer.zip)
+2. Drag and drop the downloaded file into lively
 
 ## Demonstration
 
