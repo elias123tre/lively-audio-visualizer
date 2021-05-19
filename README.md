@@ -53,6 +53,7 @@ _Feel free to open an issue or pull request if want your setup here_
 
 - Different types of visualizers (eg. lines from bottom or sparkline around center)
 - Smoother visualizer (less lag/jumping)
+- Volume threshold for showing visualizer
 
 ## Troubleshooting
 
