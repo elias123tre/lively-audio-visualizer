@@ -55,6 +55,7 @@ _Feel free to open an issue or pull request if want your setup here_
 - Smoother visualizer (less lag/jumping)
 - Scale of visualizer reacting to music
 - Volume threshold for showing visualizer
+- Video as background
 
 ## Troubleshooting
 
