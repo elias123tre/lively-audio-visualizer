@@ -27,7 +27,7 @@ _Feel free to open an issue or pull request if want your setup here_
 
 1. After installing the wallpaper, right click on it
 2. Select `Open File Location`
-3. Move your image to the `images` folder (or `logos` to add a logo)
+3. Move your image to the `images` folder (or `logos` to add a logo, make sure the file is .jpg .png .gif or .webp)
 4. Select it when customizing the wallpaper
 
 ## Customizable features
