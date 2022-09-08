@@ -1,5 +1,7 @@
 # Lively Audio Visualizer
 
+> Lively has been updated to include better support for audio visualizers. I am currently working on a new version for better intergration with the new features.
+
 Advanced and customizable Audio Visualizer for [lively wallpaper](https://rocksdanister.github.io/lively/) (similar to Wallpaper Engine)  
 See example configurations and demonstration below!
 
